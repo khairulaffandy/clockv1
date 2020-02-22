@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock-wrap">
+            <div class="hand hour" data-hour-hand></div>
+            <div class="hand minute" data-minute-hand></div>
+            <div class="hand second" data-second-hand></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <div class="notice-container">
+        <div class="alarm-notice">
+            <p class="notice-title">Next alarm</p>
+            <p data-notice-timeleft>is in <span>3 hours 15 minutes</span></p>
+            <p data-notice-timeset>is at <span>3:45PM</span></p>
+        </div>
+    </div>
+
+    <script defer src="app.js"></script>
+</body>
+</html>

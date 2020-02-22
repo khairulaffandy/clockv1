@@ -1,0 +1,104 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+    color: white;
+}
+
+.clock-container {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock-wrap {
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+}
+.clock-wrap .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 6px;
+    height: 40%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.clock-wrap .dot {
+    /* content: ''; */
+    position: absolute;
+    background-color: lawngreen;
+    z-index: 11;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clock-wrap .hand.second {
+    --rotation: 30;
+    width: 2px;
+    height: 48%;
+    background-color: lawngreen;
+}
+.clock-wrap .hand.minute {
+    --rotation: 90;
+    width: 4px;
+    height: 45%;
+    background-color: white;
+}
+.clock-wrap .hand.hour {
+    width: 6px;
+    height: 32%;
+    background-color: white;
+}
+
+.notice-container {
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.alarm-notice {
+    /* border: 12px solid #0F0F0F; */
+    border-radius: 6px;
+    padding: 10px 0;
+    margin: 0 20px;
+    width: 400px;
+    max-width: 400px;
+    box-shadow: inset 0 0 10px lawngreen;
+}
+.alarm-notice:hover {
+    box-shadow: inset 0 0 8px white;
+}
+.alarm-notice .notice-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+.alarm-notice p span {
+    color: lawngreen;
+}
+[data-notice-timeleft] {
+    display: none;
+    font-family: monospace;
+}
+[data-notice-timeset] {
+    display: none;
+    font-family: monospace;
+}
